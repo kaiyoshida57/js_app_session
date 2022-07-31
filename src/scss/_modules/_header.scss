@@ -1,0 +1,29 @@
+@import '_variables.scss';
+
+/* ==== Header ==== */
+
+.header {
+  background-color: #fff;
+  border-bottom: solid 2px #23d16e;
+  position: relative;
+	padding: 16px 0;
+  &::before {
+      content: "";
+      height: 3px;
+      width: 100%;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      z-index: 2;
+  }
+	&__inner {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	&__title {
+		font-size: 36px;
+		font-weight: 700;
+		color: #23d16e;
+	}
+}
+

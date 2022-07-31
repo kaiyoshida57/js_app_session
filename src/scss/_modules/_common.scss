@@ -1,0 +1,46 @@
+
+@import '_variables.scss';
+
+/* ==== Common ==== */
+.pc,
+.sp,
+.tab {
+  display: none;
+}
+@media screen and (min-width: $breakPc) {
+  .pc {
+    display: block;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: $breakTab) {
+  .tab {
+    display: block;
+  }
+}
+@media screen and (max-width: $breakSp) {
+  .sp {
+    display: block;
+  }
+}
+
+.pc-ib,
+.sp-ib,
+.tab-ib {
+  display: none;
+}
+@media screen and (min-width: $breakPc) {
+  .pc-ib {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: $breakTab) {
+  .tab-ib {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: $breakSp) {
+  .sp-ib {
+    display: inline-block;
+  }
+}
+

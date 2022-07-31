@@ -1,0 +1,105 @@
+@import '../_modules/variables';
+
+/* ==== Top ==== */
+
+.introduction {
+	margin: 16px auto 32px;
+	font-size: 20px;
+}
+
+.control {
+	&__heading {
+		display: inline-block;
+		background-color: #23d16e;
+		color: #fff;
+		font-weight: 700;
+		font-size: 14px;
+		padding: 4px 10px;
+		border-radius: 4px 4px 0 0;
+	}
+	&__form {
+		margin: 0 0 0;
+		background-color: #cbfadf;
+		padding: 10px 20px;
+		max-width: 1000px;
+	}
+	&__form label + label {
+		margin-left: 1em;
+	}
+	&__text {
+		font-size: 16px;
+		font-weight: 700;
+		color: #333;
+	}
+	&__formInput01 {
+		width: 30%;
+	}
+	&__formInput02 {
+		width: 15%;
+	}
+	&__addButton {
+		font-size: 14px;
+		font-weight: 700;
+		margin-left: 1em;
+		color: #000;
+		background-color: #eee;
+		border: solid 1px #ccc;
+		border-radius: 4px;
+		padding: 4px 8px;
+	}
+}
+
+.table {
+	margin: 16px 0 0;
+	box-shadow: 2px 5px 5px 0 #d6d6d6;
+	border: solid 1px #b9b9b9;
+	max-width: 1000px;
+	th {
+		font-size: 18px;
+		font-size: 700;
+		padding: 10px 20px;
+		color: #000;
+		background-color: #efefef;
+		& + th {
+			border-left: solid 1px #ccc;
+		}
+	}
+	&__title01 {
+		width: 45%;
+	}
+	&__title02 {
+		width: 15%;
+	}
+	&__title03 {
+		width: 10%;
+	}
+	&__title04 {
+		width: 20%;
+	}
+	&__title05 {
+		width: 10%;
+	}
+	td {
+		font-size: 18px;
+		padding: 10px 20px;
+		& + td {
+			border-left: solid 1px #ccc;
+		}
+		&.is-done {
+			text-decoration: line-through;
+		}
+	}
+	&__check {
+		transform: scale(1.8);
+	}
+	&__delButton {
+		border-radius: 4px;
+		color: #ff5a00;
+		background-color: #eee;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 1.2;
+		border: solid 1px #ccc;
+		padding: 2px 6px;
+	}
+}

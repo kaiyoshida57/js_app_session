@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>Topページ</title>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="keywords" content="">
+		<meta name="description" content="Webサイトです。">
+		<meta property="og:url" content="">
+		<meta property="og:title" content="Topページ">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="Webサイトです。">
+		<meta property="og:image" content="/img/icon.png">
+		<meta property="og:site_name" content="サイト名">
+		<meta property="og:locale" content="ja_JP">
+		<link rel="icon" href="/assets/img/common/favicon-32x32.png" sizes="32x32" type="image/png">
+		<link rel="apple-touch-icon-precomposed" href="/assets/img/common/apple-touch-icon.png" sizes="180x180">
+		<link rel="shortcut icon" href="/assets/img/common/favicon.ico" type="image/svg+xml" sizes="any">
+		<!-- <script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": [{
+					"@type": "ListItem",
+					"position": 1,
+					"name": "TOP",
+					"item": "https://sample.jp/"
+				}]
+			}
+		</script> -->
+		<link rel="stylesheet" href="/assets/css/common/common.css">
+		<link rel="stylesheet" href="/assets/css/top/top.css">
+	</head>
+	<body id="body">
+		<div class="wrapper">
+			<header class="header" id="header">
+				<div class="header__inner"><a class="header_logo" href="/" aria-label="Site logo">
+						<h1 class="header__title">Todo</h1></a>
+				</div>
+			</header>
+
+			<main>
+				<p class="introduction">Todoを編集・保存できます。</p>
+				<div class="control">
+					<p class="control__heading">
+						新規作成
+					</p>
+					<div class="control__form">
+						<label for="control__formInput01">
+							<span class="control__text">Todo:</span>
+							<input type="text" value="" id="control__formInput01" placeholder="Todo" class="control__formInput01">
+						</label>
+						<label for="control__formInput02">
+							<span class="control__text">期限:</span>
+							<input type="datetime-local" id="control__formInput02" class="control__formInput02">
+						</label>
+						<button type="button" class="control__addButton">
+							&plus; 新規作成する
+						</button>
+					</div>
+				</div>
+
+				<table id="todoTable" class="table">
+					<thead>
+						<tr>
+							<th class="table__title01">Todo</th>
+							<th class="table__title02">期日</th>
+							<th class="table__title03">状態</th>
+							<th class="table__title04">完了にする</th>
+							<th class="table__title05">&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>部屋の掃除</td>
+							<td>2022/01/01/12:00</td>
+							<td>未完</td>
+							<td>
+								<input type="checkbox" name="" id="" class="table__check">
+							</td>
+							<td>
+								<button type="button" class="table__delButton">
+									削除
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>犬の散歩</td>
+							<td>2022/01/02/12:00</td>
+							<td>未完</td>
+							<td>
+								<input type="checkbox" name="" id="" class="table__check">
+							</td>
+							<td>
+								<button type="button" class="table__delButton">
+									削除
+								</button>
+							</td>
+						</tr>
+						<tr>
+							<td>コンビニへ買い物</td>
+							<td>2022/01/03/12:00</td>
+							<td>完了</td>
+							<td>
+								<input type="checkbox" name="" id="" class="table__check">
+							</td>
+							<td>
+								<button type="button" class="table__delButton">
+									削除
+								</button>
+							</td>
+						</tr>
+					</tbody>
+
+				</table>
+			</main>
+		</div>
+		<script src="/assets/js/common.bundle.js"></script>
+		<script src="/assets/js/top.bundle.js"></script>
+	</body>
+</html>

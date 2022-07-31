@@ -1,0 +1,37 @@
+// break point
+$breakPc: 768px;
+$breakSp: 767px;
+$breakTab: 989px;
+
+$breakpoints: (
+	'sm': (min-width: 640px),
+	'md': (min-width: 768px),
+	'lg': (min-width: 1024px),
+	'xl': (min-width: 1280px),
+) !default;
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // マップ型で定義されていない値が呼び出された時はエラーを返す
+  @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+/* 使い方：
+.hoge {
+    font-size: 12px;
+    @include responsive(md) {
+        font-size: 14px;
+    }
+}
+*/
+
+// color
+$baseRed: #d40000;
+$subBlue: #3282c9;
+

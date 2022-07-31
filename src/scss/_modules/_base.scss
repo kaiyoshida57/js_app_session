@@ -1,0 +1,112 @@
+@import '_variables.scss';
+
+/* A Modern CSS Reset */
+/* https://coliss.com/articles/build-websites/operation/css/css-reset-for-modern-browser.html */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+small,
+button,
+input,
+select,
+figure,
+blockquote,
+div,
+dd,
+dl,
+dt,
+table,
+td,
+th,
+address {
+	margin: 0;
+	padding: 0;
+}
+
+ul,ol {
+	margin: 0;
+	padding: 0;
+}
+
+[role="list"],
+ol[role="list"],
+li {
+	list-style: none
+}
+
+html:focus-within {
+	scroll-behavior: smooth
+}
+
+body {
+	min-height: 100vh;
+	font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+	color: #333;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:not([class]) {
+	text-decoration-skip-ink: auto
+}
+
+small{
+  font-size: 10px;
+  font-size: 1rem;
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit
+}
+
+button {
+  border: none;
+  background: initial;
+	cursor: pointer;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+@media(prefers-reduced-motion:reduce) {
+	html:focus-within {
+		scroll-behavior: auto
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: .01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: .01ms !important;
+		scroll-behavior: auto !important
+	}
+}
