@@ -54,7 +54,7 @@
 						</label>
 						<label for="control__formInput02">
 							<span class="control__text">期限:</span>
-							<input type="datetime-local" id="control__formInput02" class="control__formInput02">
+							<input type="datetime-local" value="2022-11-11 10:00" id="control__formInput02" class="control__formInput02">
 						</label>
 						<button type="button" class="control__addButton">
 							&plus; 新規作成する
@@ -68,17 +68,20 @@
 							<th class="table__title01">Todo</th>
 							<th class="table__title02">期日</th>
 							<th class="table__title03">状態</th>
-							<th class="table__title04">完了にする</th>
 							<th class="table__title05">&nbsp;</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
+
+					<tbody class="table__tbody">
+						<tr class="table__row is-uncomplete">
 							<td>部屋の掃除</td>
 							<td>2022/01/01/12:00</td>
-							<td>未完</td>
 							<td>
-								<input type="checkbox" name="" id="" class="table__check">
+								<select name="" id="" class="table__select">
+									<option value="1" class="table__selectItem" selected>未完</option>
+									<option value="2" class="table__selectItem">処理中</option>
+									<option value="3" class="table__selectItem">完了</option>
+								</select>
 							</td>
 							<td>
 								<button type="button" class="table__delButton">
@@ -86,12 +89,15 @@
 								</button>
 							</td>
 						</tr>
-						<tr>
+						<tr class="table__row is-process">
 							<td>犬の散歩</td>
 							<td>2022/01/02/12:00</td>
-							<td>未完</td>
 							<td>
-								<input type="checkbox" name="" id="" class="table__check">
+								<select name="" id="" class="table__select">
+									<option value="1" class="table__selectItem">未完</option>
+									<option value="2" class="table__selectItem" selected>処理中</option>
+									<option value="3" class="table__selectItem ">完了</option>
+								</select>
 							</td>
 							<td>
 								<button type="button" class="table__delButton">
@@ -99,12 +105,15 @@
 								</button>
 							</td>
 						</tr>
-						<tr>
+						<tr class="table__row is-complete">
 							<td>コンビニへ買い物</td>
 							<td>2022/01/03/12:00</td>
-							<td>完了</td>
 							<td>
-								<input type="checkbox" name="" id="" class="table__check">
+								<select name="" id="" class="table__select">
+									<option value="1" class="table__selectItem">未完</option>
+									<option value="2" class="table__selectItem">処理中</option>
+									<option value="3" class="table__selectItem" selected>完了</option>
+								</select>
 							</td>
 							<td>
 								<button type="button" class="table__delButton">

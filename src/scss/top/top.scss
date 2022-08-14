@@ -8,6 +8,8 @@
 }
 
 .control {
+	margin: 0 auto 0;
+	max-width: 1000px;
 	&__heading {
 		display: inline-block;
 		background-color: #23d16e;
@@ -18,10 +20,8 @@
 		border-radius: 4px 4px 0 0;
 	}
 	&__form {
-		margin: 0 0 0;
-		background-color: #cbfadf;
 		padding: 10px 20px;
-		max-width: 1000px;
+		background-color: #cbfadf;
 	}
 	&__form label + label {
 		margin-left: 1em;
@@ -35,7 +35,7 @@
 		width: 30%;
 	}
 	&__formInput02 {
-		width: 15%;
+		width: 17%;
 	}
 	&__addButton {
 		font-size: 14px;
@@ -50,10 +50,19 @@
 }
 
 .table {
-	margin: 16px 0 0;
+	margin: 16px auto 0;
 	box-shadow: 2px 5px 5px 0 #d6d6d6;
 	border: solid 1px #b9b9b9;
 	max-width: 1000px;
+	&__row.is-uncomplete {
+		background-color: inherit;
+	}
+	&__row.is-process {
+		background-color: #cbfadf;
+	}
+	&__row.is-complete {
+		background-color: #498ec9;
+	}
 	th {
 		font-size: 18px;
 		font-size: 700;
@@ -91,6 +100,12 @@
 	}
 	&__check {
 		transform: scale(1.8);
+		cursor: pointer;
+	}
+	&__select {
+		border-radius: 4px;
+    border: solid 2px #767676;
+
 	}
 	&__delButton {
 		border-radius: 4px;
