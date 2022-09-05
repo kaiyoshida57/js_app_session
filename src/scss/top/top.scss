@@ -4,7 +4,10 @@
 
 .introduction {
 	margin: 16px auto 32px;
-	font-size: 20px;
+	font-size: 18px;
+	@include responsive(md){
+		font-size: 20px;
+	}
 }
 
 .control {
@@ -20,11 +23,16 @@
 		border-radius: 4px 4px 0 0;
 	}
 	&__form {
-		padding: 10px 20px;
+		padding: 8px 16px;
 		background-color: #cbfadf;
+		@include responsive(md){
+			padding: 12px 20px;
+		}
 	}
 	&__form label + label {
-		margin-left: 1em;
+		@include responsive(md){
+			margin-left: 1em;
+		}
 	}
 	&__text {
 		font-size: 16px;
@@ -32,20 +40,32 @@
 		color: #333;
 	}
 	&__formInput01 {
-		width: 30%;
+		width: 100%;
+		padding: 0 2px;
+		@include responsive(md){
+			width: 30%;
+		}
 	}
 	&__formInput02 {
-		width: 17%;
+		width: 100%;
+		padding: 0 2px;
+		@include responsive(md){
+			width: 17%;
+		}
 	}
 	&__addButton {
 		font-size: 14px;
 		font-weight: 700;
-		margin-left: 1em;
 		color: #000;
 		background-color: #eee;
 		border: solid 1px #ccc;
 		border-radius: 4px;
+		margin-top: 1em;
 		padding: 4px 8px;
+		@include responsive(md){
+			margin-top: 0;
+			margin-left: 1em;
+		}
 	}
 }
 
@@ -53,13 +73,16 @@
 	margin: 16px auto 0;
 	box-shadow: 2px 5px 5px 0 #d6d6d6;
 	border: solid 1px #b9b9b9;
-	max-width: 1000px;
 	border-collapse: collapse;
+	max-width: 100%;
+	@include responsive(md){
+		max-width: 1000px;
+	}
 	&__row.is-uncomplete {
 		background-color: inherit;
 	}
 	&__row.is-process {
-		background-color: #cbfadf;
+		background-color: #e1ffee;
 	}
 	&__row.is-complete {
 		background-color: #498ec9;
@@ -68,11 +91,15 @@
 		border-top: solid 1px #ccc;
 	}
 	th {
-		font-size: 18px;
+		font-size: 16px;
 		font-size: 700;
-		padding: 10px 20px;
 		color: #000;
+		padding: 4px 8px;
 		background-color: #efefef;
+		@include responsive(md){
+			padding: 10px 20px;
+			font-size: 18px;
+		}
 		& + th {
 			border-left: solid 1px #ccc;
 		}
@@ -93,8 +120,20 @@
 		width: 10%;
 	}
 	td {
-		font-size: 18px;
-		padding: 10px 20px;
+		font-size: 16px;
+		padding: 4px 8px;
+		text-shadow: 1px  1px 0px #fff,
+		-1px  1px 0px #fff,
+		 1px -1px 0px #fff,
+		-1px -1px 0px #fff,
+		 1px  0px 0px #fff,
+		 0px  1px 0px #fff,
+		-1px  0px 0px #fff,
+		 0px -1px 0px #fff;
+		@include responsive(md){
+			font-size: 18px;
+			padding: 10px 20px;
+		}
 		& + td {
 			border-left: solid 1px #ccc;
 		}
@@ -109,16 +148,24 @@
 	&__select {
 		border-radius: 4px;
     border: solid 2px #767676;
-
+		color: #333;
+		text-shadow: none;
 	}
 	&__delButton {
 		border-radius: 4px;
 		color: #ff5a00;
 		background-color: #eee;
-		font-size: 16px;
+		font-size: 14px;
 		font-weight: 700;
+		text-shadow: none;
 		line-height: 1.2;
 		border: solid 1px #ccc;
-		padding: 2px 6px;
+		padding: 3px 4px;
+		width: 40px;
+		@include responsive(md){
+			padding: 3px 6px;
+			font-size: 16px;
+			width: auto;
+		}
 	}
 }

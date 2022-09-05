@@ -6,7 +6,10 @@
   background-color: #fff;
   border-bottom: solid 2px #23d16e;
   position: relative;
-	padding: 16px 0;
+	padding: 8px 16px;
+	@include responsive(md){
+		padding: 16px;
+	}
   &::before {
       content: "";
       height: 3px;
@@ -17,7 +20,7 @@
       z-index: 2;
   }
 	&__inner {
-		max-width: 1200px;
+		max-width: 1168px;
 		margin: 0 auto;
 	}
 	&__title {
