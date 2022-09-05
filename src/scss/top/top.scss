@@ -54,6 +54,7 @@
 	box-shadow: 2px 5px 5px 0 #d6d6d6;
 	border: solid 1px #b9b9b9;
 	max-width: 1000px;
+	border-collapse: collapse;
 	&__row.is-uncomplete {
 		background-color: inherit;
 	}
@@ -62,6 +63,9 @@
 	}
 	&__row.is-complete {
 		background-color: #498ec9;
+	}
+	th,td {
+		border-top: solid 1px #ccc;
 	}
 	th {
 		font-size: 18px;
