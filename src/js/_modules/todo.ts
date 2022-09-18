@@ -75,12 +75,13 @@ export function todo(): void {
 
 		// -- localStorageの準備 --
 		// まずはlocalStorageからデータ取得
-		const storageJson = localStorage.mykey;
-		if(storageJson === undefined) {
-			return false;
-		}
+		// const storageJson = localStorage.mykey;
+		// if(storageJson === undefined) {
+		// 	return false;
+		// 	console.log('add false');
+		// }
 		// 呼び出し時はオブジェクト形式に戻す
-		listItems = JSON.parse(storageJson);
+		// listItems = JSON.parse(storageJson);
 
 		//   入力情報をオブジェクトの配列に入れる
 		const item = {
