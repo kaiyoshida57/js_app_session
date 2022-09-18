@@ -7,7 +7,7 @@ module.exports = {
 	},
 	// メインのJS
 	entry: {
-		"common": "./src/js/common.js",
+		// "common": "./src/js/common.js",
 		"top": "./src/js/top.ts",
 		// "top": "./src/js/slick.min.js",
 		// "top": "./src/js/top.js",

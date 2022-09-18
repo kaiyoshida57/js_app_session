@@ -1,7 +1,7 @@
 module.exports = {
 	env: {
 		browser: true,
-		commonjs: true,
+		// commonjs: true,
 		es2020: true,
 	},
 	extends: ['eslint:recommended', 'prettier'],

@@ -13,7 +13,7 @@ export function todo(): void {
   timeInput.value = now.toISOString().slice(0, -8);
 
 	// todo入力情報を入れる配列
-	let listItems: any = [];
+	let listItems = Array();
 
 	// tableへ挿入関数
 	const insertingTable = (todo: string, time: string, status: string) => {
@@ -52,6 +52,7 @@ export function todo(): void {
 			targetTbody.insertAdjacentHTML('afterbegin', insertHtml);
 		}
 	}
+
 
 	// -- 新規追加 --
 	const addBtn = document.querySelector('.control__addButton') as HTMLButtonElement;
@@ -141,7 +142,7 @@ export function todo(): void {
 			if (storageJsonObj) {
 				//変更対象の要素のtodoVal値と一致させる
 				//メモ：find()は、提供されたテスト関数を満たす配列内の要素を返す
-				let changeValue = storageJsonObj.find(
+				const changeValue = storageJsonObj.find(
 					(item: { todoVal: string; }) => item.todoVal === trDataVal
 				);
 				//一致した削除対象のオブジェクトのstatusプロパティにvalue値(整数)を入れる
@@ -173,7 +174,7 @@ export function todo(): void {
 
 					//削除対象の要素のtodoVal値と一致させる
 					//メモ：find()は、提供されたテスト関数を満たす配列内の要素を返す
-					let delValue = storageJsonObj.find(
+					const delValue = storageJsonObj.find(
 						(item: { todoVal: string; }) => item.todoVal === trDataVal
 					);
 					//一致した削除対象のオブジェクトのisDeletedプロパティにtrueを入れる
