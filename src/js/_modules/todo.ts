@@ -2,7 +2,7 @@
  * Todo操作処理
  **/
 
-import { PropertyName } from "typescript";
+
 
 export function todo(): void {
 
@@ -73,7 +73,15 @@ export function todo(): void {
 			return false;
 		}
 
-		// localStorageの準備
+		// -- localStorageの準備 --
+		// まずはlocalStorageからデータ取得
+		const storageJson = localStorage.mykey;
+		if(storageJson === undefined) {
+			return false;
+		}
+		// 呼び出し時はオブジェクト形式に戻す
+		listItems = JSON.parse(storageJson);
+
 		//   入力情報をオブジェクトの配列に入れる
 		const item = {
 			todoVal: todoInputVal,
