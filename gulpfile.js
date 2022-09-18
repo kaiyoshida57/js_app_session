@@ -25,17 +25,17 @@ const webpackConfig = require("./webpack.config");
 const eslint = require('gulp-eslint');
 
 const paths = {
-	rootDir: "dist/",
+	rootDir: "docs/",
 	htmlSrc: "src/**/*.html",
 	// pugSrc: ["src/pug/*.pug", "src/pug/**/*.pug", "!src/pug/_*/_*.pug","!src/pug/_*.pug"],
 	scssSrc: "src/scss/**/*.scss",
 	jsSrc: ["src/js/**/*.js","src/js/**/*.ts",],
 	imgSrc: "src/img/**/*",
 	jpgPngSrc: "src/img/**/*.{jpg,jpeg,png}",
-	outCss: "dist/assets/css",
-	outJs: "dist/assets/js",
-	outImg: "dist/assets/img",
-	outHtml: "dist/",
+	outCss: "docs/assets/css",
+	outJs: "docs/assets/js",
+	outImg: "docs/assets/img",
+	outHtml: "docs/",
 };
 
 // browser sync
