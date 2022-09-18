@@ -2,7 +2,7 @@
 ToDo Web Appです。LocalStorageを使ってデータ保存しています。
 
 # url:
-[https://kaiyoshida57.github.io/js_app_session/]
+[https://kaiyoshida57.github.io/js_app_session/](https://kaiyoshida57.github.io/js_app_session/)
 
 # Specifications
 Sass,babel,Webpack,ESLint,Prettier
