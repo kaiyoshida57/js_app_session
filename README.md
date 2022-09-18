@@ -1,7 +1,8 @@
-# Overview
-* template_js
-* url:
-* JavaScript template.
+# js_app_session
+ToDo Web Appです。LocalStorageを使ってデータ保存しています。
+
+# url
+[http://kaibukuro.starfree.jp/practice-js/js_app_session/](http://kaibukuro.starfree.jp/practice-js/js_app_session/)
 
 # Specifications
 Sass,babel,Webpack,ESLint,Prettier
@@ -13,12 +14,6 @@ npm install
 npx gulp
 
 # Requirement version
-node v12.13.1
+node v12.13.1, 14.20.0
 gulp v3.9.1 or 4.0.2
 
-# Other
-* git commit時のフックで、prettierがJSファイルを対象に動きます。
-* webp画像は、jpg,pngを対象にhtaccessで一括で読み込ませます。
-* 命名規則は、BEMを基本にしていますが、単語同士の「ハイフンつなぎ」を「キャメルクラス」に変更しています。
-* BEM設計に基づき、コンポーネントごとにSCSSファイルを分けています。
-`block__element--modifier 例: card__title--sub`

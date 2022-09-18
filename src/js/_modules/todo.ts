@@ -103,9 +103,14 @@ export function todo(): void {
 	//ページ読込時に、localStorageからリスト呼び出し
 	document.addEventListener('DOMContentLoaded', () => {
 		const storageJson = localStorage.mykey;
-		if(storageJson === undefined) {
-			return false;
+		const listItemsString = JSON.stringify(listItems);
+		// 初回読み込み時データ無い場合動かないのでここで追加
+		if(!storageJson) {
+			localStorage.setItem('mykey', listItemsString);
 		}
+		// if(storageJson === undefined) {
+		// 	return false;
+		// }
 		//呼び出し時は逆にオブジェクト形式に戻す
 		listItems = JSON.parse(storageJson);
 		listItems.forEach((item: { todoVal: string; todoTime: string; status: string; }) => {
