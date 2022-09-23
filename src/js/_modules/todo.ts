@@ -108,9 +108,9 @@ export function todo(): void {
 		if(!storageJson) {
 			localStorage.setItem('mykey', listItemsString);
 		}
-		// if(storageJson === undefined) {
-		// 	return false;
-		// }
+		if(storageJson === undefined) {
+			return false;
+		}
 		//呼び出し時は逆にオブジェクト形式に戻す
 		listItems = JSON.parse(storageJson);
 		listItems.forEach((item: { todoVal: string; todoTime: string; status: string; }) => {
@@ -207,6 +207,31 @@ export function todo(): void {
 			} else {
 				return false;
 			}
+		}
+	});
+
+	// 全て削除する
+	const removeAllBtn = document.querySelector('.control__delButton') as HTMLButtonElement;
+	removeAllBtn.addEventListener('click', (e) => {
+		const confirmDel = window.confirm(`全て削除しますか？`);
+		if (confirmDel) {
+			//ストレージからの削除
+			localStorage.clear();
+			// 空になった後も新規追加はさせたいので、mykeyは残す
+			listItems = Array();
+			let storageJson = localStorage.mykey;
+			const listItemsString = JSON.stringify(listItems);
+			if(!storageJson) {
+				localStorage.setItem('mykey', listItemsString);
+			}
+			//HTMLからの削除
+			const main = (e.target as HTMLElement).closest('main') as HTMLElement;
+			const todoList = main.querySelectorAll('.table__row') as NodeList;
+			todoList.forEach((todo) => {
+				(todo as HTMLElement).remove();
+			});
+		} else {
+			return false;
 		}
 	});
 }

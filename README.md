@@ -5,7 +5,7 @@ ToDo Web Appです。LocalStorageを使ってデータ保存しています。
 [http://kaibukuro.starfree.jp/practice-js/js_app_session/](http://kaibukuro.starfree.jp/practice-js/js_app_session/)
 
 # Specifications
-Sass,babel,Webpack,ESLint,Prettier
+TypeScript,Sass,babel,Webpack,ESLint,Prettier
 
 # Usage
 npm install
