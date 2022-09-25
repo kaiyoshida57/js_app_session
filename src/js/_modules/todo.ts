@@ -33,8 +33,8 @@ export function todo(): void {
 
 		const insertHtml = `
 		<tr class="table__row ${trClass}" data-todoname="${todo}">
-		<td>${todo}</td>
-		<td>${time}</td>
+		<td class="table__todoName">${todo}</td>
+		<td class="table__todoTime">${time}</td>
 		<td>
 		<select name="" id="" class="table__select">
 		<option value="1" class="table__selectItem" ${statusToSelected1}>未完</option>
@@ -146,7 +146,7 @@ export function todo(): void {
 			}
 
 			// localStorageへも変更を保存
-			// btn data値
+			// tr data値
 			const trDataVal = (parent as HTMLElement).dataset['todoname'] as string;
 			// todoごと（特定のkeyのみ）更新するにはデータ取り出してから更新
 			let storageJson = localStorage.mykey;
@@ -175,7 +175,7 @@ export function todo(): void {
 			const todoName = parent.querySelector('td:first-of-type') as HTMLElement;
 			const todoNameValue = todoName.textContent;
 			const confirmDel = window.confirm(`「${todoNameValue}」を削除しますか？`);
-			//btn data値
+			//tr data値
 			const trDataVal = (parent as HTMLElement).dataset['todoname'] as string;
 			if (confirmDel) {
 				(parent as HTMLElement).remove();
@@ -232,6 +232,43 @@ export function todo(): void {
 			});
 		} else {
 			return false;
+		}
+	});
+
+	//todo名の、入力による変更
+	// クリックで編集可能の属性付与 (追加要素への処理時のため、親要素にイベント設定)
+	tbody.addEventListener('click', (e) => {
+		if ((e.target as HTMLElement).classList.contains('table__todoName')) {
+			(e.target as HTMLElement).setAttribute('contenteditable', 'true');
+		}
+	});
+
+	// value変更されたら、focusoutイベントで保存させる
+	// **contenteditable属性ではchangeが効かないためfocusout使う
+	tbody.addEventListener('focusout', (e) => {
+		if ((e.target as HTMLElement).classList.contains('table__todoName')) {
+
+			const changedTodoName = (e.target as HTMLElement).textContent as string;
+			const parent = (e.target as HTMLElement).closest('tr') as HTMLElement;
+			const trDataVal = (parent as HTMLElement).dataset['todoname'] as string;
+
+			// まずtrのdataも更新する（状態変更・削除処理の時に失敗するため）
+			(parent as HTMLElement).dataset['todoname'] = changedTodoName;
+
+			// todoごと（特定のkeyのみ）更新するにはデータ取り出してから更新
+			let storageJson = localStorage.mykey;
+			//呼び出し時はオブジェクト形式に戻す
+			let storageJsonObj = JSON.parse(storageJson);
+			if (storageJsonObj) {
+				//変更対象の要素のtodoVal値と一致させる
+				const changeValue = storageJsonObj.find(
+					(item: { todoVal: string; }) => item.todoVal === trDataVal
+				);
+				//一致した削除対象のオブジェクトのtodoValプロパティにvalue値(文字列)を入れる
+				changeValue.todoVal = changedTodoName;
+			}
+			// JSONに変換し直してローカルストレージに再設定
+			localStorage.setItem('mykey', JSON.stringify(storageJsonObj));
 		}
 	});
 }
